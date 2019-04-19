@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TicTacToe
 {
-    public partial class Form1 : Form
+    public partial class View : Form,IObserver
     {
-        public Form1()
+        public View(Controller controller)
         {
             InitializeComponent();
+        }
+
+        public void Update(object arg0, object arg1)
+        {
+           throw new NotImplementedException();
         }
 
         private void Button1_Click(object sender, EventArgs e)

@@ -17,8 +17,11 @@ namespace TicTacToe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Console.WriteLine("TJA");
-            Application.Run(new Form1());
+            Model model = new Model();
+            Controller controller = new Controller(model);
+            View view = new View(controller);
+          
+            Application.Run(view);
         }
     }
 }

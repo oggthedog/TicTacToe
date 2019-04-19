@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObserverPattern
+namespace TicTacToe
 {
-    interface IObserver
+    public interface IObserver
     {
         void Update(object arg0, object arg1);
+      
     }
-    class Observable
+
+    public class Observable
     {
         private bool Changed;
         private List<IObserver> Observers;
@@ -24,7 +26,7 @@ namespace ObserverPattern
         }
         public void NotifyObservers(object arg1 = null)
         {
-            foreach(var o in Observers)
+            foreach (var o in Observers)
             {
                 o.Update((object)this, arg1);
             }
@@ -35,3 +37,4 @@ namespace ObserverPattern
         }
     }
 }
+
